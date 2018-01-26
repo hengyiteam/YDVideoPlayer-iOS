@@ -83,6 +83,34 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_back@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_back@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full_no@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full_no@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_pause@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_pause@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_play@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_play@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_progress@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_progress@3x.png"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_back@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_back@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full_no@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_full_no@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_pause@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_pause@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_play@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_play@3x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_progress@2x.png"
+  install_resource "${PODS_ROOT}/YWVideoPlayer/YWVideoPlayerDemo/YWVideoPlayer/Resources/icon_progress@3x.png"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

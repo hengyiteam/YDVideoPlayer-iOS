@@ -6,5 +6,7 @@ target 'YDVideoPlayer' do
   # use_frameworks!
 
   # Pods for YDVideoPlayer
-  # pod 'YWVideoPlayer', '~> 1.0.0'
+  
+  pod 'YWVideoPlayer', '~> 1.0.0'
+  
 end

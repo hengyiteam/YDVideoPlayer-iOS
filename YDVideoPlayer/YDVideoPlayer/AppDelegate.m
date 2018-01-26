@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +17,29 @@
 @implementation AppDelegate
 
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    if (self.fullScreen == YES) {
+        return UIInterfaceOrientationMaskAll;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //设置全局状态栏字体颜色为白色
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window.backgroundColor = [UIColor whiteColor];
+    // 第一种实现方式 - 单独的界面使用
+//    _window.rootViewController = [FirstViewController new];
+    
+    // 第二种实现方式 - 以基类的方式使用
+    _window.rootViewController = [SecondViewController new];
+    
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
