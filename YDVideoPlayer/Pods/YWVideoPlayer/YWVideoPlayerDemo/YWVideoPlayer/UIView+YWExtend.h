@@ -8,30 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+// 是否横竖屏
+// 用户界面横屏了才会返回YES
+#define IS_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
+// 无论支不支持横屏，只要设备横屏了，就会返回YES
+#define IS_DEVICE_LANDSCAPE UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])
 
-#if kDHeight
-#else
+// 屏幕宽度，会根据横竖屏的变化而变化
+#define YWSCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+// 屏幕高度，会根据横竖屏的变化而变化
+#define YWSCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
-#define kDHeight [UIScreen mainScreen].bounds.size.height
+// 屏幕宽度，跟横竖屏无关
+#define YWDEVICE_WIDTH (IS_LANDSCAPE ? YWSCREEN_HEIGHT : YWSCREEN_WIDTH)
+// 屏幕高度，跟横竖屏无关
+#define YWDEVICE_HEIGHT (IS_LANDSCAPE ? YWSCREEN_WIDTH : YWSCREEN_HEIGHT)
 
-#endif
+// 当前窗口
+#define YWWindow [[UIApplication sharedApplication].delegate window]
 
-#if kDWidth
-#else
-
-#define kDWidth [UIScreen mainScreen].bounds.size.width
-
-#endif
-
-
-
-#define FrameRight(frame) (frame.origin.x + frame.size.width)
-#define FrameLeft(frame) (frame.origin.x)
-#define FrameTop(frame) (frame.origin.y)
-#define FrameBottom(frame) (frame.origin.y + frame.size.height)
-#define FrameCenterY(frame) (frame.origin.y + frame.size.height/2)
-#define FrameCenterX(frame) (frame.origin.x + frame.size.width/2)
-#define kDWindow [[UIApplication sharedApplication].delegate window]
+// 小屏模式高度
+#define YWMinPlayerHeight (YWSCREEN_WIDTH / 16 * 9)
 
 @interface UIView (YWExtend)
 

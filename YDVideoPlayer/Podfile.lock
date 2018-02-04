@@ -1,17 +1,17 @@
 PODS:
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
-  - YWVideoPlayer (1.0.0):
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
+  - YWVideoPlayer (1.0.1):
     - SDWebImage (>= 4.0.0)
 
 DEPENDENCIES:
-  - YWVideoPlayer (~> 1.0.0)
+  - YWVideoPlayer (~> 1.0.1)
 
 SPEC CHECKSUMS:
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
-  YWVideoPlayer: 18f6f4b4718a1311b91eee7c2c84177e2e8f5555
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  YWVideoPlayer: 9e564273cbd370479c69a41fe3c4a5c4079d8ba7
 
-PODFILE CHECKSUM: 4940e20b3969a6328e0c204ed7cfe6dc34109b54
+PODFILE CHECKSUM: df3075271c36bf05c88c541c9c1011af0115c944
 
 COCOAPODS: 1.4.0

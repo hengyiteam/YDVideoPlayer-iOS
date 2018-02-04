@@ -7,6 +7,6 @@ target 'YDVideoPlayer' do
 
   # Pods for YDVideoPlayer
   
-  pod 'YWVideoPlayer', '~> 1.0.0'
+  pod 'YWVideoPlayer', '~> 1.0.1'
   
 end

@@ -1,17 +1,21 @@
-# YWVideoPlayer
-基于ijkPlayer的播放器，支持网络视频、RTMP直播、视频转播等
+## YWVideoPlayer
 
-### 3分钟快速集成播放器
+### 全屏模式 - 效果图
+![](./效果图.png)
 
-#### 一、使用 `Pod` 导入方式
-**1、在podfile文件中添加，然后执行 `pod install`操作，由于使用的 `IJKMediaFramework.framework` 较大，请耐心等待**
+> 基于ijkPlayer的网络播放器，支持网络视频、RTMP、HLS(m3u8)等多种格式
+> 
+> 3分钟快速集成播放器，支持小屏、全屏模式，无需手动添加任何依赖库
+
+#### 一、推荐使用`CocoaPods`方式集成
+**1、在podfile文件中添加，然后执行 `pod install`操作，文件较大，请耐心等待**
 
 ```
 pod 'YWVideoPlayer', '~> 1.0.0'
 ```
 
 **2、`AppDelegate.h` 文件中加入 `fullScreen ` 属性，如下**
- 
+
 ```
 #import <UIKit/UIKit.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -32,7 +36,15 @@ pod 'YWVideoPlayer', '~> 1.0.0'
     return UIInterfaceOrientationMaskPortrait;
 }
 ```
-**4、照着`BasePlayerViewController`文件中的方式去使用即可**
+
+**4、在播放器控制器界面导入头文件**
+*Demo 里面是在`BasePlayerViewController`中引入相关头文件*
+
+```
+#import "YWMediaPlayerView.h"
+```
+
+**5、照着`BasePlayerViewController`文件中的方式去使用即可**
 
 ```
 // 这里的SecondViewController是继承了BasePlayerViewController
@@ -43,12 +55,17 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.isLiveVideo = YES; // 设置为直播
+    
+    self.isLiveVideo = YES;
     [self.view addSubview:self.playerView];
-    NSString *mvUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
-    [self showPlayerViewWithUrl:mvUrl Title:@"三国"];
+   
+    // 测试链接 mp4、rtmp、m3u8
+    // NSString *testUrl = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
+    // NSString *testUrl = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
+    NSString *testUrl = @"http://dlhls.cdn.zhanqi.tv/zqlive/49427_jmACJ.m3u8";
+    [self showPlayerViewWithUrl:testUrl Title:@"视频的标题"];
     // 自动播放
     [self autoPlay];
 }
@@ -56,8 +73,16 @@ pod 'YWVideoPlayer', '~> 1.0.0'
 @end
 ```
 
- 
 
 #### 二、手动拖拽到项目方式
 **完善中**
+
+-----------------------------------
+
+**简书地址：https://www.jianshu.com/p/546df1c8a3fc**
+
+<div align="center">    
+	<img src = "http://upload-images.jianshu.io/upload_images/2822163-23eb59c7072548bb.png" width = "300" height = "100" alt="图片名称" align = center />
+</div>
+
 

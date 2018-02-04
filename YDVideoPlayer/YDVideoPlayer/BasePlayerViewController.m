@@ -64,14 +64,21 @@
 // 改变View大小布局
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
+    NSLog(@"%ld", [UIDevice currentDevice].orientation);
+    
     if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft ||
         [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
-        self.mediaPlayerView.frame = CGRectMake(0, 0, kDWidth, kDHeight);
-        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, kDHeight, kDWidth);
+        
+        NSLog(@"\n旋转屏幕 - YWSCREEN:%f - %f", YWSCREEN_WIDTH, YWSCREEN_HEIGHT);
+        NSLog(@"\n旋转屏幕 - YWDEVICE:%f - %f", YWDEVICE_WIDTH, YWDEVICE_HEIGHT);
+
+        self.mediaPlayerView.frame = CGRectMake(0, 0, YWDEVICE_HEIGHT, YWDEVICE_WIDTH);
+        self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, YWDEVICE_HEIGHT, YWDEVICE_WIDTH);
         self.mediaPlayerView.mediaControl.fullScreenBtn.selected = YES;
         self.mediaPlayerView.isFullScreen = YES;
-        [kDWindow addSubview:self.mediaPlayerView];
+        [YWWindow addSubview:self.mediaPlayerView];
     } else {
+        
         self.mediaPlayerView.frame = CGRectMake(0, 0, size.width, size.width/16*9);
         self.mediaPlayerView.player.view.frame = CGRectMake(0, 0, size.width, size.width/16*9);
         self.mediaPlayerView.mediaControl.fullScreenBtn.selected = NO;
@@ -83,15 +90,13 @@
 #pragma mark -- 加载 & 移除
 - (void)showPlayerViewWithUrl:(NSString *)urlString Title:(NSString *)title {
     [self removePlayViewSubViews];
-    // 开启支持全屏模式
+    // 开启全屏模式
     ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = YES;
     [self.mediaPlayerView playerViewWithUrl:urlString WithTitle:title WithView:self.playerView WithDelegate:self];
 }
 
 - (void)removePlayerView {
     [self removePlayViewSubViews];
-    // 关闭支持全屏模式 - 这里之所以关闭时因为有的应用其他界面只有一个方向
-    ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = NO;
 }
 
 - (void)autoPlay {
@@ -106,8 +111,11 @@
 #pragma mark -- private
 // 移除播放器视图上面的所有子控件
 - (void)removePlayViewSubViews {
-    for(int i = 0; i < self.playerView.subviews.count; i++){
-        [[self.playerView.subviews objectAtIndex:i] removeFromSuperview];
+    // 关闭全屏模式
+    ((AppDelegate *) [[UIApplication sharedApplication] delegate]).fullScreen = NO;
+    
+    for (UIView *view in self.playerView.subviews) {
+        [view removeFromSuperview];
     }
 }
 
@@ -116,7 +124,7 @@
 #pragma mark -- getter
 - (UIView *)playerView {
     if (!_playerView) {
-        _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDWidth, kDWidth/16*9)];
+        _playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, YWSCREEN_WIDTH, YWMinPlayerHeight)];
         _playerView.backgroundColor = [UIColor lightGrayColor];
 
     }

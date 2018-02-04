@@ -14,7 +14,6 @@
 		36D3430D201B3EE900A1F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D3430C201B3EE900A1F3D8 /* main.m */; };
 		36D34319201B558600A1F3D8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D34313201B558500A1F3D8 /* SecondViewController.m */; };
 		36D3431A201B558600A1F3D8 /* BasePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D34315201B558600A1F3D8 /* BasePlayerViewController.m */; };
-		36D3431B201B558600A1F3D8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D34318201B558600A1F3D8 /* FirstViewController.m */; };
 		6080C1CBA1C575556CBF7507 /* libPods-YDVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0A8323E922F4AE1B5D2853 /* libPods-YDVideoPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +30,6 @@
 		36D34314201B558600A1F3D8 /* BasePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePlayerViewController.h; sourceTree = "<group>"; };
 		36D34315201B558600A1F3D8 /* BasePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePlayerViewController.m; sourceTree = "<group>"; };
 		36D34316201B558600A1F3D8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		36D34317201B558600A1F3D8 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		36D34318201B558600A1F3D8 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		5F752F5EFB0003EDA05078BB /* Pods-YDVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-YDVideoPlayer/Pods-YDVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		867246ECF1E10756B58F7FC0 /* Pods-YDVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YDVideoPlayer/Pods-YDVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		FF0A8323E922F4AE1B5D2853 /* libPods-YDVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YDVideoPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,8 +72,6 @@
 				36D342FE201B3EE900A1F3D8 /* AppDelegate.m */,
 				36D34314201B558600A1F3D8 /* BasePlayerViewController.h */,
 				36D34315201B558600A1F3D8 /* BasePlayerViewController.m */,
-				36D34317201B558600A1F3D8 /* FirstViewController.h */,
-				36D34318201B558600A1F3D8 /* FirstViewController.m */,
 				36D34316201B558600A1F3D8 /* SecondViewController.h */,
 				36D34313201B558500A1F3D8 /* SecondViewController.m */,
 				36D34303201B3EE900A1F3D8 /* Main.storyboard */,
@@ -257,7 +252,6 @@
 			files = (
 				36D3431A201B558600A1F3D8 /* BasePlayerViewController.m in Sources */,
 				36D34319201B558600A1F3D8 /* SecondViewController.m in Sources */,
-				36D3431B201B558600A1F3D8 /* FirstViewController.m in Sources */,
 				36D3430D201B3EE900A1F3D8 /* main.m in Sources */,
 				36D342FF201B3EE900A1F3D8 /* AppDelegate.m in Sources */,
 			);
