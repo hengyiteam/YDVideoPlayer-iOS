@@ -3,7 +3,7 @@
 YDVedioPlayer - 一款基于ijkplayer的万能视频播放器
 
 ### Android 版本
-https://github.com/fanhua1994/YDVideoPlayer-Android  
+https://github.com/hengyiteam/YDVideoPlayer-Android  
 
 ### 证书
 
